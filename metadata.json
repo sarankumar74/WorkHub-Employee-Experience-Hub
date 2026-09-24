@@ -1,0 +1,6 @@
+{
+  "name": "WorkHub — Employee Experience Hub",
+  "description": "Centralized employee experience hub with AI assistant, organizational directory, company knowledge base, events & meetings, and offboarding management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
