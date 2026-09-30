@@ -107,9 +107,10 @@ In modern distributed and hybrid organizations, employee information, corporate 
 
 ### Step-by-Step Setup
 
+
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/workhub.git
+   git clone https://github.com/sarankumar74/WorkHub-Employee-Experience-Hub.git
    cd workhub
    ```
 
