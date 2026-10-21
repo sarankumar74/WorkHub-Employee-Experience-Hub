@@ -1,0 +1,100 @@
+{
+  "entities": {
+    "Employee": {
+      "title": "Employee",
+      "description": "Company employee record and directory profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "department": { "type": "string" },
+        "team": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "avatar": { "type": "string" },
+        "skills": { "type": "array" },
+        "projects": { "type": "array" },
+        "manager": { "type": "string" },
+        "location": { "type": "string" },
+        "bio": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "onboarding", "offboarding"] }
+      },
+      "required": ["id", "name", "email", "jobTitle", "department", "team"]
+    },
+    "KnowledgeArticle": {
+      "title": "KnowledgeArticle",
+      "description": "Company policy or documentation knowledge base article",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "summary": { "type": "string" },
+        "content": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "author": { "type": "string" },
+        "readTime": { "type": "string" },
+        "tags": { "type": "array" },
+        "accessLevel": { "type": "string" }
+      },
+      "required": ["id", "title", "category", "content"]
+    },
+    "CompanyEvent": {
+      "title": "CompanyEvent",
+      "description": "Team meeting, training, or company event",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "team": { "type": "string" },
+        "type": { "type": "string" },
+        "location": { "type": "string" },
+        "meetingLink": { "type": "string" },
+        "participants": { "type": "array" },
+        "description": { "type": "string" }
+      },
+      "required": ["id", "title", "time", "team"]
+    },
+    "OffboardingRecord": {
+      "title": "OffboardingRecord",
+      "description": "Offboarding checklist and handover tracking record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employeeId": { "type": "string" },
+        "employeeName": { "type": "string" },
+        "employeeRole": { "type": "string" },
+        "lastWorkingDay": { "type": "string" },
+        "managerName": { "type": "string" },
+        "managerEmail": { "type": "string" },
+        "hrContact": { "type": "string" },
+        "progressPercent": { "type": "number" },
+        "tasks": { "type": "array" },
+        "notes": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "employeeId", "tasks"]
+    }
+  },
+  "firestore": {
+    "/employees/{employeeId}": {
+      "schema": "Employee",
+      "description": "Employee directory records"
+    },
+    "/knowledge/{articleId}": {
+      "schema": "KnowledgeArticle",
+      "description": "Company policies and knowledge articles"
+    },
+    "/events/{eventId}": {
+      "schema": "CompanyEvent",
+      "description": "Company meetings and calendar events"
+    },
+    "/offboarding/{recordId}": {
+      "schema": "OffboardingRecord",
+      "description": "Exit and offboarding records"
+    }
+  }
+}
