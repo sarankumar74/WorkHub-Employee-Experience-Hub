@@ -82,8 +82,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
             }`}
           >
             <div className="flex items-center gap-3 min-w-0">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-600 text-white font-bold text-xl shadow-md shadow-blue-500/20 shrink-0">
-                W
+              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-500/20 shrink-0 p-2">
+                <svg viewBox="0 0 64 64" fill="none" className="w-full h-full">
+                  <path d="M14 20L22 46" stroke="#ffffff" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M22 46L32 26L42 46" stroke="#ffffff" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M42 46L50 20" stroke="#ffffff" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="32" cy="22" r="4.5" fill="#93c5fd" />
+                </svg>
               </div>
               {!isCollapsed && (
                 <div className="truncate">
